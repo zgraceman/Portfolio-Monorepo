@@ -1,0 +1,78 @@
+# Compiled Files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and Databases
+*.log
+*.sql
+*.sqlite
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE Specific Files
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+.project
+.settings/
+.classpath/
+.cproject
+.cdtproject
+
+# Node.js
+node_modules/
+npm-debug.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Visual Studio Code
+.vscode/
+
+# Visual Studio
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.csproj.docstates
+*.sln.docstates
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows Image File Caches
+Thumbs.db
+ehthumbs.db
+
+# Folder Config Files
+Desktop.ini
+$RECYCLE.BIN/
