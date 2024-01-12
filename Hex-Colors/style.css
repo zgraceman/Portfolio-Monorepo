@@ -32,6 +32,13 @@ body{
     margin-top: 15%;
 }
 
+.back-to-portfolio {
+    position: fixed; /* Fix position relative to viewport */
+    bottom: 20px; /* Distance from bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for exact centering */
+}
+
 @keyframes colorchange{
     0%{
         color: indigo;
