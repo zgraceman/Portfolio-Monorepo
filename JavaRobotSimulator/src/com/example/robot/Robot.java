@@ -45,10 +45,31 @@ class Robot {
 
     public void navigate() {
         Random random = new Random();
+        double SMART_MOVE_PROBABILITY = 0.4;
+
         while (goal_x != pos_x || goal_y != pos_y) {
-            int action = random.nextInt(4);
-            step(Direction.values()[action]);
+            if (random.nextDouble() < SMART_MOVE_PROBABILITY) {
+                // Make a smart move towards the goal
+                Direction smartMove = determineSmartMove();
+                step(smartMove);
+                System.out.print("Smart Move:");
+            } else {
+                // Make a random move
+                int action = random.nextInt(4);
+                step(Direction.values()[action]);
+                System.out.print("Random Move:");
+            }
             System.out.println(world);
+        }
+    }
+    private Direction determineSmartMove() {
+        // Determine the direction that brings the robot closer to its goal
+        if (Math.abs(goal_x - pos_x) > Math.abs(goal_y - pos_y)) {
+            // Move horizontally
+            return (pos_x < goal_x) ? Direction.RIGHT : Direction.LEFT;
+        } else {
+            // Move vertically
+            return (pos_y < goal_y) ? Direction.DOWN : Direction.UP;
         }
     }
 }
