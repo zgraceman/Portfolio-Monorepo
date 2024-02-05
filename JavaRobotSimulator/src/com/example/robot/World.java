@@ -1,8 +1,9 @@
 package com.example.robot;
 
 class World {
-    private int size;
-    private char[][] grid;
+    private final int size;
+    private final char[][] grid;
+    private static final char INITIAL_GRID_CHAR = '*';
 
     public World(int size) {
         this.size = size;
@@ -14,14 +15,10 @@ class World {
         return size;
     }
 
-    public void setSize(int size) {
-        this.size = size;
-    }
-
     private void initializeGrid() {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                grid[i][j] = '*';
+                grid[i][j] = INITIAL_GRID_CHAR;
             }
         }
     }
