@@ -30,7 +30,12 @@ class Robot {
     }
 
     public void step(Direction direction) {
-        world.setCharacterAt(pos_x, pos_y, INITIAL_GRID_CHAR);
+        world.setCharacterAt(pos_x, pos_y, '*');
+        calculateNewPosition(direction);
+        world.setCharacterAt(pos_x, pos_y, 'R');
+    }
+
+    private void calculateNewPosition(Direction direction) {
         switch (direction) {
             case UP:
                 if (pos_y > 0) pos_y--;
@@ -45,7 +50,6 @@ class Robot {
                 if (pos_x < world.getSize() - 1) pos_x++;
                 break;
         }
-        world.setCharacterAt(pos_x, pos_y, ROBOT_CHAR);
     }
 
     public void navigate() {
