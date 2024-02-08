@@ -12,13 +12,16 @@ class Robot {
     private static final char INITIAL_GRID_CHAR = '*';
     private static final int NUMBER_OF_DIRECTIONS = 4;
 
-    public Robot(int x, int y, World world) {
-        validatePosition(x, y, world);
+    public Robot(int x, int y, int goalX, int goalY, World world) {
+        validatePosition(x, y, world);  // Validate Robot Position
+        validatePosition(goalX, goalY, world);  // Validate Goal Position
+
         this.pos_x = x;
         this.pos_y = y;
         this.world = world;
-        this.goal_x = world.getSize() - 1;
-        this.goal_y = world.getSize() - 1;
+        this.goal_x = goalX;
+        this.goal_y = goalY;
+
         world.setCharacterAt(x, y, ROBOT_CHAR);
         world.setCharacterAt(goal_x, goal_y, GOAL_CHAR);
     }
