@@ -5,10 +5,12 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Enter world size: ");
-            int size = scanner.nextInt();
+            System.out.print("Enter world width: ");
+            int width = scanner.nextInt();
+            System.out.print("Enter world height: ");
+            int height = scanner.nextInt();
 
-            World world = new World(size);
+            World world = new World(width, height);
 
             System.out.print("Enter robot's starting X position: ");
             int startX = scanner.nextInt();
