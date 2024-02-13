@@ -27,7 +27,7 @@ class Robot {
     }
 
     private void validatePosition(int x, int y, World world) {
-        if (x < 0 || x >= world.getSize() || y < 0 || y >= world.getSize()) {
+        if (x < 0 || x >= world.getWidth() || y < 0 || y >= world.getHeight()) {
             throw new IllegalArgumentException("Initial robot position (" + x + ", " + y + ") is out of bounds.");
         }
     }
@@ -41,16 +41,16 @@ class Robot {
     private void calculateNewPosition(Direction direction) {
         switch (direction) {
             case UP:
-                if (pos_y > 0) pos_y--;
+                pos_y = (pos_y - 1 + world.getHeight()) % world.getHeight();
                 break;
             case DOWN:
-                if (pos_y < world.getSize() - 1) pos_y++;
+                pos_y = (pos_y + 1) % world.getHeight();
                 break;
             case LEFT:
-                if (pos_x > 0) pos_x--;
+                pos_x = (pos_x - 1 + world.getWidth()) % world.getWidth();
                 break;
             case RIGHT:
-                if (pos_x < world.getSize() - 1) pos_x++;
+                pos_x = (pos_x + 1) % world.getWidth();
                 break;
         }
     }

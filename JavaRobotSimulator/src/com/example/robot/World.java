@@ -25,6 +25,14 @@ class World {
         grid[y][x] = character;
     }
 
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder("\n");
