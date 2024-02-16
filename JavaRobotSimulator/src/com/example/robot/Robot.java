@@ -27,8 +27,11 @@ class Robot {
     }
 
     private void validatePosition(int x, int y, World world) {
-        if (x < 0 || x >= world.getWidth() || y < 0 || y >= world.getHeight()) {
-            throw new IllegalArgumentException("Initial robot position (" + x + ", " + y + ") is out of bounds.");
+        if (x < 0 || x >= world.getWidth()) {
+            throw new IllegalArgumentException("X position " + x + " is out of bounds (0-" + (world.getWidth() - 1) + ").");
+        }
+        if (y < 0 || y >= world.getHeight()) {
+            throw new IllegalArgumentException("Y position " + y + " is out of bounds (0-" + (world.getHeight() - 1) + ").");
         }
     }
 
