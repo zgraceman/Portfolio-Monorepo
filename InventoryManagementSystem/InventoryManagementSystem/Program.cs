@@ -1,10 +1,13 @@
-﻿using System;
+﻿using InventoryManagementSystem;
+using System;
+
 namespace InventoryManagementSystem
 {
 	public class Program
 	{
-		public Program()
+		static void Main(string[] args)
 		{
+
 		}
 	}
 }

@@ -1,11 +1,9 @@
-﻿using System;
+﻿using InventoryManagementSystem;
+
 namespace InventoryManagementSystem
 {
-	public class EmptyClass
-	{
-		public EmptyClass()
-		{
-		}
-	}
-}
+    public class Inventory
+    {
 
+    }
+}
