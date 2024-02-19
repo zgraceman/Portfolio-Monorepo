@@ -4,29 +4,29 @@ namespace InventoryManagementSystem
 {
     public class Inventory
     {
-        private Book[] books;
+        private Product[] products;
         private int count;
 
         public Inventory(int size)
         {
-            books = new Book[size];
+            products = new Product[size];
             count = 0;
         }
 
-        public void AddBook(Book book)
+        public void AddProduct(Product product)
         {
-            if (count < books.Length)
+            if (count < products.Length)
             {
-                books[count] = book;
+                products[count] = product;
                 count++;
             }
         }
 
-        public void DisplayBooks()
+        public void DisplayProducts()
         {
             for (int i = 0; i < count; i++)
             {
-                Console.WriteLine(books[i]);
+                Console.WriteLine(products[i]);
             }
         }
     }

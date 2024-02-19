@@ -1,18 +1,21 @@
-﻿public class Book
+﻿using System;
+
+namespace InventoryManagementSystem
 {
-    public string Title { get; set; }
+	public class Book : Product
+{
     public string Author { get; set; }
-    public decimal Price { get; set; }
 
     public Book(string title, string author, decimal price)
+        : base(title, price)
     {
-        Title = title;
         Author = author;
-        Price = price;
     }
 
     public override string ToString()
     {
-        return $"Title: {Title}, Author: {Author}, Price: {Price}";
+        return $"{base.ToString()}, Author: {Author}";
     }
 }
+}
+
