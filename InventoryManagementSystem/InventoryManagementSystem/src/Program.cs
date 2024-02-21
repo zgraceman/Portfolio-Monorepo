@@ -7,7 +7,7 @@ namespace InventoryManagementSystem
     {
         static void Main(string[] args)
         {
-            Inventory inventory = new Inventory(10);
+            Inventory inventory = new Inventory();
 
             inventory.AddProduct(new Book("1984", "George Orwell", 9.99m));
             inventory.AddProduct(new Book("To Kill a Mockingbird", "Harper Lee", 12.99m));
@@ -15,11 +15,11 @@ namespace InventoryManagementSystem
             inventory.AddProduct(new Device("Zach's Phone", "Google", "Pixel 6a", 400m));
 
 
-            Console.WriteLine("Current Inventory:");
+            Console.WriteLine("Current Inventory:\n");
             inventory.DisplayProducts();
 
             decimal convertedPrice = Utility.ConvertCurrency(10.00m, 1.2m);
-            Console.WriteLine($"Converted Price: {convertedPrice}");
+            Console.WriteLine($"\nConverted Price: {convertedPrice}");
         }
     }
 }

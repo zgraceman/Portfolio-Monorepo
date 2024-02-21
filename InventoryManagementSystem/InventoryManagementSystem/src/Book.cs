@@ -14,8 +14,8 @@ namespace InventoryManagementSystem
 
     public override string ToString()
     {
-        return $"{base.ToString()}, Author: {Author}";
-    }
+            return $"Title: {Name}, Price: {Price}, Author: {Author}";
+        }
 }
 }
 

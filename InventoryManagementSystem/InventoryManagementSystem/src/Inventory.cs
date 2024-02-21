@@ -1,32 +1,42 @@
 ﻿using InventoryManagementSystem;
+using System;
+using System.Collections.Generic;
 
 namespace InventoryManagementSystem
 {
     public class Inventory
     {
-        private Product[] products;
-        private int count;
+        private List<Product> products;
+        private Dictionary<Type, string> productTypeNames;
 
-        public Inventory(int size)
+        public Inventory()
         {
-            products = new Product[size];
-            count = 0;
+            products = new List<Product>();
+            productTypeNames = new Dictionary<Type, string>
+            {
+                { typeof(Book), "Books" },
+                { typeof(Device), "Devices" }
+            };
         }
 
         public void AddProduct(Product product)
         {
-            if (count < products.Length)
-            {
-                products[count] = product;
-                count++;
-            }
+            products.Add(product);
         }
 
         public void DisplayProducts()
         {
-            for (int i = 0; i < count; i++)
+            foreach (var pair in productTypeNames)
             {
-                Console.WriteLine(products[i]);
+                Console.WriteLine($"{pair.Value}:");
+                foreach (var product in products)
+                {
+                    if (product.GetType() == pair.Key)
+                    {
+                        Console.WriteLine($" - {product}");
+                    }
+                }
+                Console.WriteLine();
             }
         }
     }
