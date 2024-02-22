@@ -1,6 +1,8 @@
 ﻿using InventoryManagementSystem;
 using System;
+using System.IO;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace InventoryManagementSystem
 {
@@ -37,6 +39,21 @@ namespace InventoryManagementSystem
                     }
                 }
                 Console.WriteLine();
+            }
+        }
+
+        public void SaveToJson(string filePath)
+        {
+            var jsonString = JsonConvert.SerializeObject(products, Formatting.Indented);
+            File.WriteAllText(filePath, jsonString);
+        }
+
+        public void LoadFromJson(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                var jsonString = File.ReadAllText(filePath);
+                products = JsonConvert.DeserializeObject<List<Product>>(jsonString);
             }
         }
     }
