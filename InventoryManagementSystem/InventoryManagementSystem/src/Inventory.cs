@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using System.Xml.Serialization;
 
 namespace InventoryManagementSystem
 {
@@ -54,6 +55,15 @@ namespace InventoryManagementSystem
             {
                 var jsonString = File.ReadAllText(filePath);
                 products = JsonConvert.DeserializeObject<List<Product>>(jsonString);
+            }
+        }
+
+        public void SaveToXml(string filePath)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Product>));
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                serializer.Serialize(writer, products);
             }
         }
     }

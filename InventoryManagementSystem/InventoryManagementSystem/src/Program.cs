@@ -5,14 +5,15 @@ namespace InventoryManagementSystem
 {
     class Program
     {
-        private static string filePathLoad = "/Users/zgraceman/Desktop/products.json";
-        private static string filePathSave = "/Users/zgraceman/Desktop/test.json";
+        private static string filePathLoadJson = "/Users/zgraceman/Desktop/products.json";
+        private static string filePathSaveJson = "/Users/zgraceman/Desktop/test.json";
+        private static string filePathSaveXml = "/Users/zgraceman/Desktop/test.xml";
 
         static void Main(string[] args)
         {
             Inventory inventory = new Inventory();
 
-            inventory.LoadFromJson(filePathLoad);
+            inventory.LoadFromJson(filePathLoadJson);
 
             // Adding books
             inventory.AddProduct(new Book("1984", "George Orwell", 9.99m));
@@ -31,7 +32,10 @@ namespace InventoryManagementSystem
             Console.WriteLine($"\nConverted Price: {convertedPrice}");
 
             // JSON
-            inventory.SaveToJson(filePathSave);
+            inventory.SaveToJson(filePathSaveJson);
+
+            // XML
+            inventory.SaveToXml(filePathSaveXml);
         }
     }
 }

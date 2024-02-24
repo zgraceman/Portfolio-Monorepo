@@ -6,7 +6,7 @@ namespace InventoryManagementSystem
     {
         public string Author { get; set; }
 
-        public Book() : base ("", 0) { }
+        public Book() { }
 
         public Book(string title, string author, decimal price)
           : base(title, price)

@@ -7,6 +7,8 @@ namespace InventoryManagementSystem
         public string Manufacturer { get; set; }
         public string Model { get; set; }
 
+        public Device() { }
+
         public Device(string name, string manufacturer, string model, decimal price)
             : base(name, price)
         {
