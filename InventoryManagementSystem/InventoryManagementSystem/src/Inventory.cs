@@ -88,5 +88,25 @@ namespace InventoryManagementSystem
                 serializer.Serialize(writer, products);
             }
         }
+
+        /// <summary>
+        /// Loads the inventory from an XML file.
+        /// </summary>
+        /// <param name="filePath">The file path of the XML file to be loaded.</param>
+        public void LoadFromXml(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                // Create a new XmlSerializer instance with the type of the List<Product>
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Product>));
+
+                // Open the file specified by filePath using a FileStream
+                using (FileStream fileStream = new FileStream(filePath, FileMode.Open))
+                {
+                    // Deserialize the XML from the file to the products list
+                    products = (List<Product>)serializer.Deserialize(fileStream);
+                }
+            }
+        }
     }
 }

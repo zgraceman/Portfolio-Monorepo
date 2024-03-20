@@ -5,15 +5,20 @@ namespace InventoryManagementSystem
 {
     class Program
     {
-        private static string filePathLoadJson = "/Users/zgraceman/Desktop/products.json";
-        private static string filePathSaveJson = "/Users/zgraceman/Desktop/test.json";
-        private static string filePathSaveXml = "/Users/zgraceman/Desktop/test.xml";
+        private static string filePathLoadJson = "/Users/zgraceman/Desktop/products2.json";
+        private static string filePathLoadXml = "/Users/zgraceman/Desktop/test.xml";
+
+        private static string filePathSaveJson = "/Users/zgraceman/Desktop/out.json";
+        private static string filePathSaveXml = "/Users/zgraceman/Desktop/out.xml";
 
         static void Main(string[] args)
         {
             Inventory inventory = new Inventory();
 
-            inventory.LoadFromJson(filePathLoadJson);
+            //inventory.LoadFromJson(filePathLoadJson);
+
+            // Option to load from XML instead of JSON
+            inventory.LoadFromXml(filePathLoadXml);
 
             // Adding books
             inventory.AddProduct(new Book("1984", "George Orwell", 9.99m));
