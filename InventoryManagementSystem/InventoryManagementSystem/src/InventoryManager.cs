@@ -1,15 +1,27 @@
 ﻿using System;
 namespace InventoryManagementSystem
 {
+    /// <summary>
+    /// Manages inventory operations, including loading, adding sample products, displaying, and saving inventory.
+    /// </summary>
 	public class InventoryManager
 	{
         private Inventory inventory;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InventoryManager"/> class with the specified inventory.
+        /// </summary>
+        /// <param name="inventory">The inventory to manage.</param>
         public InventoryManager(Inventory inventory)
         {
             this.inventory = inventory;
         }
 
+        /// <summary>
+        /// Loads inventory data from either a JSON or XML file based on user input.
+        /// </summary>
+        /// <param name="jsonPath">The file path for the JSON file.</param>
+        /// <param name="xmlPath">The file path for the XML file.</param>
         public void LoadInventory(string jsonPath, string xmlPath)
         {
             // Provide option to choose between JSON or XML
@@ -31,6 +43,9 @@ namespace InventoryManagementSystem
             }
         }
 
+        /// <summary>
+        /// Adds predefined sample products to the inventory.
+        /// </summary>
         public void AddSampleProducts()
         {
             inventory.AddProduct(new Book("1984", "George Orwell", 9.99m));
@@ -40,12 +55,20 @@ namespace InventoryManagementSystem
             Console.WriteLine("Sample products added.");
         }
 
+        /// <summary>
+        /// Displays the current inventory, listing all products grouped by their type.
+        /// </summary>
         public void DisplayInventory()
         {
             Console.WriteLine("Current Inventory:\n");
             inventory.DisplayProducts();
         }
 
+        /// <summary>
+        /// Saves the current state of the inventory to either a JSON or XML file based on user input.
+        /// </summary>
+        /// <param name="jsonPath">The file path for the JSON file.</param>
+        /// <param name="xmlPath">The file path for the XML file.</param>
         public void SaveInventory(string jsonPath, string xmlPath)
         {
             // Provide option to choose between JSON or XML
