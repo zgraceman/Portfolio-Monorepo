@@ -34,6 +34,11 @@ namespace InventoryManagementSystem
             products.Add(product);
         }
 
+        public bool RemoveProduct(Product product)
+        {
+            return products.Remove(product);
+        }
+
         /// <summary>
         /// Displays the products in the inventory, grouped by type.
         /// </summary>
