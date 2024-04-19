@@ -29,11 +29,31 @@ namespace InventoryManagementSystem
             };
         }
 
+        /// <summary>
+        /// Adds a product to the inventory.
+        /// </summary>
+        /// <param name="product">The product to be added to the inventory.</param>
+        /// <remarks>
+        /// This method adds a new product to the internal list of products managed by the Inventory class.
+        /// If the product is already in the inventory, it will still be added again, allowing duplicates unless checked prior to addition.
+        /// </remarks>
         public void AddProduct(Product product)
         {
             products.Add(product);
         }
 
+        /// <summary>
+        /// Removes a product from the inventory.
+        /// </summary>
+        /// <param name="product">The product to be removed from the inventory.</param>
+        /// <returns>
+        /// True if the product was successfully removed; otherwise, false.
+        /// This method returns false if the product is not found in the inventory.
+        /// </returns>
+        /// <remarks>
+        /// This method attempts to remove the first occurrence of the specified product from the inventory.
+        /// It compares instances, not product values or IDs. Ensure the correct product instance is passed when calling this method.
+        /// </remarks>
         public bool RemoveProduct(Product product)
         {
             return products.Remove(product);
